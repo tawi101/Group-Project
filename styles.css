@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background: #4CAF50;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  main {
+    padding: 2em;
+  }
+  
+  .pet-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+  }
+  
+  .pet-card {
+    border: 1px solid #ccc;
+    padding: 1em;
+    width: 200px;
+    background: #f9f9f9;
+  }
+  
