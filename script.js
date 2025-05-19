@@ -1,4 +1,3 @@
-// --- Get Petfinder Access Token ---
 async function getAccessToken() {
     const res = await fetch("https://api.petfinder.com/v2/oauth2/token", {
       method: "POST",
@@ -13,7 +12,6 @@ async function getAccessToken() {
     return data.access_token;
   }
   
-  // --- Load Adoptable Pets on Browse Page ---
   async function loadPets() {
     const token = await getAccessToken();
     const res = await fetch("https://api.petfinder.com/v2/animals?type=dog&limit=6", {
@@ -39,7 +37,6 @@ async function getAccessToken() {
     });
   }
   
-  // --- Save Pet to Supabase via API ---
   async function addToFavorites(name, age, photo) {
     try {
       const res = await fetch('/api/addFavorite', {
@@ -65,7 +62,6 @@ async function getAccessToken() {
   }
   
   
-  // --- Load Saved Favorites on favorites.html ---
   async function loadFavorites() {
     const container = document.getElementById("favorites");
     if (!container) return;
@@ -94,7 +90,6 @@ async function getAccessToken() {
     }
   }
   
-  // --- Page Detection ---
   document.addEventListener("DOMContentLoaded", () => {
     if (document.getElementById("pets")) loadPets();
     if (document.getElementById("favorites")) loadFavorites();
