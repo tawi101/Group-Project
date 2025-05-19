@@ -5,18 +5,41 @@
   <title>Browse Pets - PetFinder Pals</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="glide.core.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
 </head>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+    new Glide('.glide', {
+      type: 'carousel',
+      autoplay: 3000,
+      perView: 1
+    }).mount();
+  </script>
+  
 <body>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="browse.html">Browse</a>
-  </nav>
+    <a href="favorites.html">Favorites</a>
+</nav>
   <main>
     <h2>Adoptable Pets</h2>
     <div id="pets" class="pet-grid"></div>
   </main>
   <script src="glide.min.js"></script>
   <script src="script.js"></script>
+  <h3>🐾 Featured Pets</h3>
+<div class="glide">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide"><img src="https://placekitten.com/300/200" alt="Kitten 1"></li>
+      <li class="glide__slide"><img src="https://placekitten.com/301/200" alt="Kitten 2"></li>
+      <li class="glide__slide"><img src="https://placekitten.com/302/200" alt="Kitten 3"></li>
+    </ul>
+  </div>
+</div>
+
 </body>
 </html>
