@@ -8,3 +8,4 @@ Description of target browser: Chrome, FireFox, Edge, Safari.
 Link to developer manual: https://docs.google.com/document/d/1GjN_0rQbGwAw72I87rv18iehmXmt2joQNfCAdfHWR30/edit?usp=sharing
 
 
+Link to Vercel Deployment: https://group-project-sigma.vercel.app/
