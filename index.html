@@ -1,22 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PetFinder Home</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <title>PetFinder Pals - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+
 </head>
+<script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    new Glide('.glide', {
+      type: 'carousel',
+      autoplay: 3000,
+      perView: 1
+    }).mount();
+  });
+</script>
+
 <body>
   <nav>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="browse.html">Browse Pets</a>
+    <a href="browse.html">Browse</a>
+    <a href="favorites.html">Favorites</a>
   </nav>
-
   <main>
-    <h1>🐶 Welcome to PetFinder Pals 🐾</h1>
+    <h1>🐶 Welcome to PetFinder Pals!</h1>
+    <p>Our mission is simple: help you find your next furry best friend.</p>
+    <p>Whether you're looking for a playful pup, a cozy cat, or anything in between — we connect you with real shelters and adoption centers across the country.</p>
+    <p>We use the <strong>Petfinder API</strong> to bring real-time listings of adoptable animals right to your screen.</p>
+    <p>💡 Save your favorite pets to keep track of who you love most — then reach out to the shelter when you're ready to meet!</p>
+    
+    <h3>🐾 Why Use PetFinder Pals?</h3>
+    <ul>
+      <li>Real-time pet listings from hundreds of shelters</li>
+      <li>Easy-to-use browsing and saving tools</li>
+      <li>Free to use, always</li>
+    </ul>
+    <h3>🐾 Featured Pets</h3>
+    <div class="glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide"><img src="https://placekitten.com/300/200" alt="Kitten 1" /></li>
+          <li class="glide__slide"><img src="https://placekitten.com/301/200" alt="Kitten 2" /></li>
+          <li class="glide__slide"><img src="https://placekitten.com/302/200" alt="Kitten 3" /></li>
+        </ul>
+      </div>
+    </div>
+    
     <canvas id="breedChart" width="400" height="200"></canvas>
+    
   </main>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<canvas id="breedChart" width="400" height="200"></canvas>
+<script>
+    const rtx= document.getElementById('breedChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Labrador', 'Poodle', 'Bulldog', 'Beagle', 'Chihuahua'],
+        datasets: [{
+          label: '# of Adoptions',
+          data: [12, 19, 3, 5, 2],
+          backgroundColor: ['#f8b400', '#36a2eb', '#ff6384', '#4bc0c0', '#9966ff'],
+          borderColor: ['#f8b400', '#36a2eb', '#ff6384', '#4bc0c0', '#9966ff'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+  
   <script src="chart.min.js"></script>
   <script>
     const ctx = document.getElementById('breedChart').getContext('2d');
@@ -27,31 +84,13 @@
         datasets: [{
           label: '# of Adoptions',
           data: [12, 19, 3, 5, 2],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255,99,132,1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)'
-          ],
+          backgroundColor: ['#f8b400', '#36a2eb', '#ff6384', '#4bc0c0', '#9966ff'],
+          borderColor: ['#f8b400', '#36a2eb', '#ff6384', '#4bc0c0', '#9966ff'],
           borderWidth: 1
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
+      options: { scales: { y: { beginAtZero: true } } }
     });
   </script>
 </body>
-</html>
+</html
